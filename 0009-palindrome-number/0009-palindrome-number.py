@@ -4,15 +4,6 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-
-        if x<0:
-            return False
-        if str(x)==str(x)[::-1] :
-            return True
-        else :
-            return False
-            
-        """
         if x<0 or (x!=0 and x%10==0):
             return False
         revHalf =0
@@ -23,7 +14,15 @@ class Solution(object):
             return True
         else :
             return False
-    
+        """
+        __________
+
+        if x<0:
+            return False
+        if str(x)==str(x)[::-1] :
+            return True
+        else :
+            return False
         ---------- 
         if x<0:
             return False
