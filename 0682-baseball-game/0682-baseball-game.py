@@ -3,12 +3,9 @@ class Solution:
         score =[]
         for i in range(len(operations)):
             if operations[i] == "+":
-                if i >=1:
-                    score.append(score[-1]+score[-2])
-                else:
-                    score.append(score[-1])
+                score.append(score[-1]+score[-2])
             elif operations[i] =="C":
-                score.remove(score[-1])
+                score.pop()
             elif operations[i]=="D":
                 score.append(2*score[-1])
             else:
