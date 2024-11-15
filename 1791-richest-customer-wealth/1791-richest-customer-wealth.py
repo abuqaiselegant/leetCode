@@ -1,6 +1,6 @@
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
-        maxSum =0
+        """maxSum =0
         for i in range(len(accounts)):
             sum=0
             for j in range(len(accounts[i])):
@@ -8,5 +8,7 @@ class Solution:
             if sum > maxSum:
                 maxSum = sum
                 sum =0
+        return maxSum"""
+        maxSum = max([sum(x) for x in accounts])
         return maxSum
             
