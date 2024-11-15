@@ -5,7 +5,7 @@ class Solution:
         avg = sum(salary)/len(salary)
         return avg"""
         result = sorted(salary)
-        return sum(result[1:-1])/len(result[1:-1])
+        return sum(result[1:-1])/(len(salary)-2)
 
 
 
