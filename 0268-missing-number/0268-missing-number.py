@@ -8,11 +8,15 @@ class Solution:
                     flag =1
                     break
             if flag==0:
-                return i"""
+                return i
+
         hash = [0]*(n+1)
         for i in range(n):
             hash[nums[i]]+=1
         for i in range(n+1):
             if hash[i]==0:
-                return i
+                return i"""
+        summation = (n * (n + 1)) // 2
+        s2 = sum(nums)
+        return summation-s2
 
