@@ -16,6 +16,7 @@ class Solution:
         for i in range(n+1):
             if hash[i]==0:
                 return i"""
+                
         summation = (n * (n + 1)) // 2
         s2 = sum(nums)
         return summation-s2
