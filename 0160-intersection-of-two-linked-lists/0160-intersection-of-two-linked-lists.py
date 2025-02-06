@@ -6,7 +6,7 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        if (headA or headB) is None:
+        if headA is None or headB is None:
             return None
         
         pA = headA
