@@ -9,13 +9,10 @@ class Solution:
                 a[i],a[j] = a[j],a[i]
                 i+=1
                 j-=1
-            elif a[i] in vowels and a[j] not in vowels:
+            elif a[j] not in vowels:
                 j-=1
-            elif a[i] not in vowels and a[j] in vowels:
+            elif a[i] not in vowels:
                 i+=1
-            else:
-                i+=1
-                j-=1
         return "".join(a)
 
             
