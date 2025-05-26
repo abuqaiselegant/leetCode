@@ -6,3 +6,4 @@ class Solution:
                 return True
             seen.add(i)
         return False
+        # return len(nums)!=len(set(nums))
