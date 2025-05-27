@@ -1,12 +1,18 @@
 class Solution:
-
-    
     def twoSum(self, nums, target):
-        a = {}
-        for i in range(len(nums)):
-            com = target - nums[i]
-            if com in a:
-                return[i, a[com]]
+        A = []
+        for i, num in enumerate(nums):
+            A.append([num, i])
+        
+        A.sort()
+        i, j = 0, len(nums) - 1
+        while i < j:
+            cur = A[i][0] + A[j][0]
+            if cur == target:
+                return [min(A[i][1], A[j][1]), 
+                        max(A[i][1], A[j][1])]
+            elif cur < target:
+                i += 1
             else:
-                a[nums[i]]=i
+                j -= 1
         return []
