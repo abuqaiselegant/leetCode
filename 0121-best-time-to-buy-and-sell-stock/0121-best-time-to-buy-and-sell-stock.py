@@ -5,11 +5,16 @@ class Solution:
         for i in range(1,len(prices)):
             if prices[i]<minPrice:
                 minPrice = prices[i]
-            else:
-                profit = prices[i]-minPrice
-                maxProfit = max(profit, maxProfit)
-        return maxProfit
+        #     else:
+        #         profit = prices[i]-minPrice
+        #         maxProfit = max(profit, maxProfit)
+        # return maxProfit
+            # profit = prices[i]-minPrice
+            # if profit>maxProfit:
+            #     maxProfit = profit
+            maxProfit = max(maxProfit, prices[i]-minPrice)
 
+        return maxProfit
 
 
 
