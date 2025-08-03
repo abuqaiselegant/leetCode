@@ -9,8 +9,7 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: None Do not return anything, modify head in-place instead.
         """
-        if not head or not head.next:
-            return None
+        
 
         slow,fast = head,head
         while fast and fast.next != None:
