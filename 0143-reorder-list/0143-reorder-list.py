@@ -15,7 +15,7 @@ class Solution(object):
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        
+    
         pre = None
         temp = slow
         while temp:
@@ -23,6 +23,8 @@ class Solution(object):
             temp.next = pre
             pre = temp
             temp = nextNode
+        
+        
         
         first = head
         second = pre
