@@ -11,21 +11,21 @@ class Solution(object):
         """
         if not head:
             return head
-        slow,fast = head,head
-        while fast and fast.next != None:
+        slow , fast = head,head
+        while fast and fast.next:
             slow = slow.next
-            fast =fast.next.next
+            fast = fast.next.next
         
-        tail = None
+        pre = None
         temp = slow
-        while temp :
-            next_node = temp.next
-            temp.next = tail
-            tail = temp
-            temp = next_node
-
+        while temp:
+            nextNode = temp.next
+            temp.next = pre
+            pre = temp
+            temp = nextNode
+        
         first = head
-        second = tail
+        second = pre
         while second.next:
             temp1 = first.next
             temp2 = second.next
@@ -34,5 +34,4 @@ class Solution(object):
             second.next = temp1
 
             first = temp1
-            second = temp2 
-        return head
+            second = temp2
