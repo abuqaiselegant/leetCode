@@ -8,9 +8,10 @@ class Solution(object):
         sList = list(s)
         while l<=r:
             if sList[l].isalpha() and sList[r].isalpha():
-                temp = sList[l]
-                sList[l]=sList[r]
-                sList[r] = temp
+                # temp = sList[l]
+                # sList[l]=sList[r]
+                # sList[r] = temp
+                sList[l],sList[r] = sList[r],sList[l]
                 l+=1
                 r-=1
             elif sList[l].isalpha()==False:
