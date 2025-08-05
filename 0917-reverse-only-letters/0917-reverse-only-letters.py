@@ -6,7 +6,7 @@ class Solution(object):
         """
         l , r = 0, len(s)-1
         sList = list(s)
-        while l<=r:
+        while l<r:
             if sList[l].isalpha() and sList[r].isalpha():
                 # temp = sList[l]
                 # sList[l]=sList[r]
