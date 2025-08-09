@@ -9,18 +9,25 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-
-        prev, curr = None, head
-
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        prev = None
+        temp = head
+        while temp:
+            nextNode = temp.next
+            temp.next = prev
+            prev = temp
+            temp = nextNode
         return prev
+
+
+
+
+
+
+        # prev, curr = None, head
+
+        # while curr:
+        #     temp = curr.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = temp
+        # return prev
