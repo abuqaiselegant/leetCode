@@ -13,8 +13,11 @@ class Solution:
         # while num and int(num[-1])%2==0:
         #     num = num[:-1]
         # return num
-
+        # for i in range(len(num)-1,-1,-1):
+        #     if int(num[i]) %2==1:
+        #         return num[:i+1]
+        # return ""
         for i in range(len(num)-1,-1,-1):
-            if int(num[i]) %2==1:
-                return num[:i+1]
-        return ""
+            if int(num[-1]) %2==0:
+                num =num[:i]
+        return num
