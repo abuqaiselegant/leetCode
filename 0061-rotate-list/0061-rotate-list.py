@@ -5,6 +5,8 @@
 #         self.next = next
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head or not head.next or k == 0:
+            return head
         count = 0
         dummy = ListNode(0, head)
         n = 1
