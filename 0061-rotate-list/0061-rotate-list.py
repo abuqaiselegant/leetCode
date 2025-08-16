@@ -27,9 +27,6 @@ class Solution:
     
             pre.next = None
             temp.next = head
-            print("pre",pre)
-            print("temp",temp)
-            print("head",head)
             head = temp
             count +=1
             
