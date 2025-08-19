@@ -15,13 +15,14 @@ class MyLinkedList:
             if count == index:
                 return temp.val
             temp = temp.next
-            count += 1
+            count +=1
         return -1
 
     def addAtHead(self, val: int) -> None:
         temp = Node(val)
         temp.next = self.head
         self.head = temp
+
 
     def addAtTail(self, val: int) -> None:
         temp = self.head
@@ -35,43 +36,36 @@ class MyLinkedList:
 
     def addAtIndex(self, index: int, val: int) -> None:
         newNode = Node(val)
-        if index == 0:
+        if index ==0:
             newNode.next = self.head
             self.head = newNode
             return 
-        
-        # traverse to index-1
         temp = self.head
         count = 0
-        while temp and count < index-1:
+        while temp and count<index-1:
             temp = temp.next
-            count += 1
-
-        if temp is None:   # index > length
-            return
-
-        newNode.next = temp.next
+            count+=1
+        if temp is None:
+            return 
+        newNode.next =temp.next
         temp.next = newNode
 
+        
+
     def deleteAtIndex(self, index: int) -> None:
-        if self.head is None:
+        if self.head == None:
             return
         if index == 0:
             self.head = self.head.next
-            return
-        
-        # traverse to index-1
+            return 
         temp = self.head
         count = 0
-        while temp and count < index-1:
-            temp = temp.next
-            count += 1
-
-        if temp is None or temp.next is None:  # index out of range
+        while temp and count <index-1:
+            temp= temp.next
+            count+=1
+        if temp is None or temp.next is None:
             return
-
         temp.next = temp.next.next
-
         
 
 
