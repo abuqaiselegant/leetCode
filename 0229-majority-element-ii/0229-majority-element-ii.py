@@ -18,15 +18,15 @@ class Solution:
                 count1-=1
                 count2-=1
         a = []
+        count1=0
+        count2=0
         for num in nums:
-            count1=1
-            count2=1
             if num ==x:
                 count1+=1
             elif num ==y:
                 count2+=1
         if count1 >len(nums)/3:
             a.append(x)
-        if count2>len(nums)/3:
+        if count2 >len(nums)/3:
             a.append(y)
         return a
