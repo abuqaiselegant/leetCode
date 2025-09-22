@@ -7,14 +7,13 @@ class Solution:
         #     a[nums[i]] = i 
         # return False
 
-        l,r=0,len(nums)-1
-        while l<r:
-            if nums[l]==nums[r] and abs(l-r)<=k:
+        window =set()
+        l=0
+        for r in range(len(nums)):
+            if r-l>k:
+                window.remove(nums[l])
+                l+=1
+            if nums[r] in window:
                 return True
-            l+=1
-        l,r=0,len(nums)-1
-        while l<r:
-            if nums[l]==nums[r] and abs(l-r)<=k:
-                return True
-            r-=1
+            window.add(nums[r])
         return False
