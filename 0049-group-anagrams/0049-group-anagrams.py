@@ -1,11 +1,12 @@
-from collections import defaultdict
-
 class Solution:
-    def groupAnagrams(self, strs):
-        anagram_map = defaultdict(list)  # key: sorted string, value: list of anagrams
-        
-        for word in strs:
-            key = ''.join(sorted(word))  # Sorting gives us a consistent anagram signature
-            anagram_map[key].append(word)
-        
-        return list(anagram_map.values())  # Convert to list of lists
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        a = {}
+        for i in range(len(strs)):
+            key = ''.join(sorted(strs[i]))
+            if key in a:
+                a[key].append(strs[i])
+            if key not in a:
+                a[key] = []
+                a[key].append(strs[i])
+        return [a[x] for x in a]
+
