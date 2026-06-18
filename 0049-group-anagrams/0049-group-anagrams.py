@@ -3,10 +3,8 @@ class Solution:
         a = {}
         for i in range(len(strs)):
             key = ''.join(sorted(strs[i]))
-            if key in a:
-                a[key].append(strs[i])
             if key not in a:
                 a[key] = []
-                a[key].append(strs[i])
+            a[key].append(strs[i])
         return [a[x] for x in a]
 
