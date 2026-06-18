@@ -1,12 +1,8 @@
 class Solution:
-
-    
-    def twoSum(self, nums, target):
-        a = {}
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numsDic = {}
         for i in range(len(nums)):
-            com = target - nums[i]
-            if com in a:
-                return[i, a[com]]
+            if target - nums[i] not in  numsDic:
+                numsDic[nums[i]] = i
             else:
-                a[nums[i]]=i
-        return []
+                return [numsDic[target-nums[i]], i]        
