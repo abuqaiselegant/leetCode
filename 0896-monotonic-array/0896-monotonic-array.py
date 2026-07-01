@@ -1,26 +1,17 @@
-class Solution(object):
-    def isMonotonic(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        i = 1
+        if len(nums)==1:
+            return True
         if nums[0]<=nums[len(nums)-1]:
-            for i in range(len(nums)-1):
-                if nums[i+1]<nums[i]:
+            while i < len(nums):
+                if nums[i]<nums[i-1]:
                     return False
+                i+=1
+
         else:
-            for i in range(len(nums)-1):
-                if nums[i+1]>nums[i]:
+            while i < len(nums):
+                if nums[i]>nums[i-1]:
                     return False
-        return True"""
-        inc = dec = True
-        for i in range(len(nums)-1):
-            if nums[i+1]<nums[i]:
-                inc = False
-            if nums[i+1]>nums[i]:
-                dec = False
-            if inc ==False and dec == False:
-                return False
+                i+=1
         return True
-            
-        
