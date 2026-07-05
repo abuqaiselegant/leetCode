@@ -1,27 +1,23 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        # Check if lengths match
-        if len(s) != len(t):
+        if len(s)!=len(t):
             return False
         
-        # Map s chars to t chars
-        s_to_t = {}
-        # Track used t chars
-        t_used = set()
-        
-        # Iterate over both strings together
-        for s_char, t_char in zip(s, t):
-            # If s_char is already mapped
-            if s_char in s_to_t:
-                # Mapping must match current t_char
-                if s_to_t[s_char] != t_char:
-                    return False
+        mapST ={}
+        mapTS ={}
 
-            else:
-                # t_char must not be used by another s_char
-                if t_char in t_used:
+        for i in range(len(s)):
+            c1 = s[i]
+            c2 = t[i]
+
+            if c1 in mapST:
+                if mapST[c1]!=c2:
                     return False
-                s_to_t[s_char] = t_char
-                t_used.add(t_char)
-        
+            
+            if c2 in mapTS:
+                if mapTS[c2]!=c1:
+                    return False
+            mapST[c1] = c2
+            mapTS[c2] = c1
+
         return True
